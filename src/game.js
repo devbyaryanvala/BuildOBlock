@@ -1,5 +1,4 @@
-        // --- Constants & Global Settings ---
-        let currentWorldSize = 30; // Default world size, can be changed by user
+        let currentWorldSize = 30;
         const CUBE_SIZE = 1;
         var PLAYER_SPEED = 50.0; 
         const VERTICAL_FLY_SPEED = 6.0;
@@ -38,14 +37,11 @@
         let lastTouchX = 0, lastTouchY = 0;
         const isTouchDevice = (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
 
-        // DOM Elements
         let gameContainer, messageBox, controlsInfoDesktop, mobileStatusInfo, mobileControlsContainer, mobileDPad, mobileActionButtons, desktopButtonContainer, loadingOverlay, worldSizeSelector, restartWorldBtn;
 
-        // Sound Effects (Tone.js)
         let placeSound, removeSound, jumpSound, switchBlockSound;
         let soundsReady = false;
 
-        // --- Function Definitions ---
 
         function onMouseWheel(event) {
             if (isTouchDevice || !controls.isLocked) return;
@@ -53,7 +49,6 @@
             cycleBlockType(scrollDelta);
         }
         
-        // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
             gameContainer = document.getElementById('game-container');
             messageBox = document.getElementById('message-box');
